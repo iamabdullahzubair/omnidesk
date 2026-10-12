@@ -67,10 +67,10 @@ flowchart TB
         Volume[("Persistent Docker Volume\npgdata")]
     end
 
-    CustomerClient -->|HTTP / WS| Nginx
-    AgentClient -->|HTTP / WS| Nginx
-    Nginx -->|Proxy: /api| ExpressRouter
-    Nginx -->|Proxy: /socket.io (WS Upgrade)| SocketEngine
+    CustomerClient -->|"HTTP / WS"| Nginx
+    AgentClient -->|"HTTP / WS"| Nginx
+    Nginx -->|"Proxy: /api"| ExpressRouter
+    Nginx -->|"Proxy: /socket.io (WS Upgrade)"| SocketEngine
 
     ExpressRouter --> Services
     SocketEngine --> Services
